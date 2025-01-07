@@ -4,12 +4,31 @@
 
 .divider {
   border-top: 1px #9398A0 solid;
-  margin: 6px 12px;
+  margin: 12px;
 }
 
 #folder-list {
   list-style-type: none;
   padding: 0 12px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+#folder-list::-webkit-scrollbar {
+  width: 4px !important; /* スクロールバーの幅 */
+}
+
+#folder-list::-webkit-scrollbar-track {
+  background: #414244 !important; /* スクロールバーの背景色 */
+}
+
+#folder-list::-webkit-scrollbar-thumb {
+  background: #888 !important; /* スクロールバーのつまみの色 */
+  border-radius: 4px !important; /* スクロールバーのつまみの角丸 */
+}
+
+#folder-list::-webkit-scrollbar-thumb:hover {
+  background: #555 !important; /* スクロールバーのつまみのホバー時の色 */
 }
 
 .folder-list-item {

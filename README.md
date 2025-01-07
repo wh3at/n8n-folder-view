@@ -11,10 +11,6 @@
 </p>
 </div>
 
-## 📷 Screenshots
-![screenshot1](https://raw.githubusercontent.com/wh3at/n8n-folder-view/master/screenshot1.png)
-![screenshot2](https://raw.githubusercontent.com/wh3at/n8n-folder-view/master/screenshot2.png)
-
 ## 🚀 Usage
 
 ### 1. Download the latest release of the extension
@@ -36,6 +32,11 @@ In the top right corner of the page, toggle the "Developer mode" switch to the o
 With "Developer mode" enabled, new buttons will appear.
 Click the "Load unpacked" button.
 In the file selection dialog, select the folder you extracted in step 2.
+
+## 📷 Screenshots
+![screenshot1](https://raw.githubusercontent.com/wh3at/n8n-folder-view/master/screenshot1.png)
+![screenshot2](https://raw.githubusercontent.com/wh3at/n8n-folder-view/master/screenshot2.png)
+![screenshot3](https://raw.githubusercontent.com/wh3at/n8n-folder-view/master/screenshot3.png)
 
 ## 🎗 License
 

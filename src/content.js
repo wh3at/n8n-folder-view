@@ -15,6 +15,7 @@ const TEMPLATES = {
         <ul id="folder-list">
         </ul>
       </div>
+      <hr class="divider"/>
     </div>
   `
 };
