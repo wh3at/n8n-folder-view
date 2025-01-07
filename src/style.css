@@ -1,0 +1,39 @@
+#folder-view-container {
+  color: #C3C9D5;
+}
+
+.divider {
+  border-top: 1px #9398A0 solid;
+  margin: 6px 12px;
+}
+
+#folder-list {
+  list-style-type: none;
+  padding: 0 12px;
+}
+
+.folder-list-item {
+  cursor: pointer;
+  padding: 20px 12px;
+  height: 40px;
+  border-radius: 4px;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+}
+
+.folder-list-item.is-active {
+  background-color: #525456;
+}
+
+.folder-list-item-icon {
+  margin-right: 13px;
+  display: inline-block;
+}
+
+.folder-list-item-name {
+  font-size: 14px;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+}

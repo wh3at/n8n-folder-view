@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "n8n Folder View",
+  "version": "0.1.0",
+  "description": "Adds a folder view to n8n sidebar based on tags.",
+  "author": "wh3at",
+  "icons": {
+    "32": "assets/logo32.png",
+    "48": "assets/logo48.png",
+    "128": "assets/logo128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ]
+}
