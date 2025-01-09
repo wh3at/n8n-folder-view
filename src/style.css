@@ -10,7 +10,7 @@
 #folder-list {
   list-style-type: none;
   padding: 0 12px;
-  max-height: 240px;
+  max-height: 800px;
   overflow-y: auto;
 }
 
