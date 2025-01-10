@@ -15,20 +15,20 @@
 }
 
 #folder-list::-webkit-scrollbar {
-  width: 4px !important; /* スクロールバーの幅 */
+  width: 4px !important;
 }
 
 #folder-list::-webkit-scrollbar-track {
-  background: #414244 !important; /* スクロールバーの背景色 */
+  background: #414244 !important;
 }
 
 #folder-list::-webkit-scrollbar-thumb {
-  background: #888 !important; /* スクロールバーのつまみの色 */
-  border-radius: 4px !important; /* スクロールバーのつまみの角丸 */
+  background: #888 !important;
+  border-radius: 4px !important;
 }
 
 #folder-list::-webkit-scrollbar-thumb:hover {
-  background: #555 !important; /* スクロールバーのつまみのホバー時の色 */
+  background: #555 !important;
 }
 
 .folder-list-item {
