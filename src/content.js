@@ -11,9 +11,7 @@ const TEMPLATES = {
   folderViewContainer: `
     <div id="folder-view-container">
       <hr class="divider"/>
-      <div id="folder-list-container">
-        <ul id="folder-list">
-        </ul>
+      <div id="folder-list">
       </div>
       <hr class="divider"/>
     </div>
