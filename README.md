@@ -34,9 +34,9 @@ Click the "Load unpacked" button.
 In the file selection dialog, select the folder you extracted in step 2.
 
 ## 📷 Screenshots
-![screenshot1](https://raw.githubusercontent.com/wh3at/n8n-folder-view/master/screenshot1.png)
-![screenshot2](https://raw.githubusercontent.com/wh3at/n8n-folder-view/master/screenshot2.png)
-![screenshot3](https://raw.githubusercontent.com/wh3at/n8n-folder-view/master/screenshot3.png)
+![screenshot1](https://raw.githubusercontent.com/wh3at/n8n-folder-view/master/screenshots/screenshot1.png)
+![screenshot2](https://raw.githubusercontent.com/wh3at/n8n-folder-view/master/screenshots/screenshot2.png)
+![screenshot3](https://raw.githubusercontent.com/wh3at/n8n-folder-view/master/screenshots/screenshot3.png)
 
 ## 🎗 License
 
