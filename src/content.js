@@ -138,6 +138,7 @@ function queryXpath(xpath, node = document) {
 async function main(){
   const tagNames = await extractTagNames();
   createFolderView(tagNames);
+  document.querySelector('.folder-list-item').classList.add('is-active');
 }
 
 main();
