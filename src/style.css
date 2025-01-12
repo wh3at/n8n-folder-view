@@ -2,7 +2,7 @@
   color: #C3C9D5;
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  position: relative;
 }
 
 .divider {
@@ -10,15 +10,88 @@
   margin: 12px;
 }
 
-[class^="_menuHeader"] {
-  overflow: visible !important;
-}
-
 #folder-list {
   padding: 0 12px;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  position: relative;
+}
+
+.folder-list-item {
+  cursor: pointer;
+  padding: 20px 12px;
+  height: 40px;
+  border-radius: 4px;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.folder-list-item:not(:first-child) {
+  margin-top: 8px;
+}
+
+.folder-list-item-icon {
+  margin-right: 13px;
+  display: inline-block;
+}
+
+.folder-list-item-name {
+  font-size: 14px;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: calc(100% - 30px);
+}
+
+.tooltip {
+  position: fixed;
+  background-color: #E7EBF3;
+  color: #2C2E30;
+  padding: 12px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 9999999;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out 0.3s;
+  transform: translateY(-50%);
+  visibility: hidden;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 4px;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 60%;
+  border-style: solid;
+  border-width: 5px 5px 5px 0;
+  border-color: transparent #E7EBF3 transparent transparent;
+  translate: -100% -50%;
+}
+
+.folder-list-item:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.folder-list-item:hover,
+.folder-list-item.is-active {
+  background-color: #525456;
 }
 
 #folder-list::-webkit-scrollbar {
@@ -36,38 +109,4 @@
 
 #folder-list::-webkit-scrollbar-thumb:hover {
   background: #555 !important;
-}
-
-.folder-list-item {
-  cursor: pointer;
-  padding: 20px 12px;
-  height: 40px;
-  border-radius: 4px;
-  align-items: center;
-  display: flex;
-  overflow: hidden;
-}
-
-.folder-list-item:not(:first-child) {
-  margin-top: 8px;
-}
-
-.folder-list-item:hover {
-  background-color: #525456;
-}
-
-.folder-list-item.is-active {
-  background-color: #525456;
-}
-
-.folder-list-item-icon {
-  margin-right: 13px;
-  display: inline-block;
-}
-
-.folder-list-item-name {
-  font-size: 14px;
-  display: inline-block;
-  height: 35px;
-  line-height: 35px;
 }
