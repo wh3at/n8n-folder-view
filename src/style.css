@@ -48,6 +48,10 @@
   overflow: hidden;
 }
 
+.folder-list-item:hover {
+  background-color: #525456;
+}
+
 .folder-list-item.is-active {
   background-color: #525456;
 }
