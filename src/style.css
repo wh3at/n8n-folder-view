@@ -48,6 +48,10 @@
   overflow: hidden;
 }
 
+.folder-list-item:not(:first-child) {
+  margin-top: 8px;
+}
+
 .folder-list-item:hover {
   background-color: #525456;
 }
