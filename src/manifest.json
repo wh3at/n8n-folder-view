@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "n8n Folder View",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Adds a folder view to n8n sidebar based on tags.",
   "author": "wh3at",
   "icons": {
