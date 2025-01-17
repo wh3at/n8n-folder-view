@@ -5,20 +5,36 @@ const TEMPLATES = {
         <i class="el-icon-folder"></i>
       </span>
       <span class="folder-list-item-name">${tagname}</span>
+      <div class="tooltip">${tagname}</div>
     </div>
   `,
   
   folderViewContainer: `
     <div id="folder-view-container">
       <hr class="divider"/>
-      <div id="folder-list-container">
-        <ul id="folder-list">
-        </ul>
+      <div id="folder-list">
       </div>
       <hr class="divider"/>
     </div>
   `
 };
+
+/**
+ * Updates the position of the tooltip based on the current mouse event.
+ *
+ * @param {Event} event - The mouse event triggering the tooltip position update.
+ */
+function updateTooltipPosition(event) {
+  const tooltipElement = event.currentTarget.querySelector('.tooltip');
+  if (!tooltipElement) return;
+
+  const sidebar = document.getElementById('sidebar');
+  const sidebarRect = sidebar.getBoundingClientRect();
+  const itemRect = event.currentTarget.getBoundingClientRect();
+  
+  tooltipElement.style.left = sidebarRect.width + 'px';
+  tooltipElement.style.top = itemRect.top + (itemRect.height / 2) + 'px';
+}
 
 /**
  * Creates a view for folders based on the provided tag names.
@@ -43,15 +59,19 @@ function createFolderView(tagNames) {
   menuContent.insertAdjacentHTML('beforebegin', TEMPLATES.folderViewContainer);
 
   addFolderListItem('All');
-
   tagNames.forEach(tagName => {
     addFolderListItem(tagName);
   });
 
-  const folderList = document.querySelector('#folder-list');
-  folderList.addEventListener('click', (event) => {
-    handleFolderListItemClick(event);
+  // For tooltip
+  const folderItems = document.querySelectorAll('.folder-list-item');
+  folderItems.forEach(item => {
+    item.addEventListener('mouseenter', updateTooltipPosition);
+    item.addEventListener('mousemove', updateTooltipPosition);
   });
+
+  const folderList = document.querySelector('#folder-list');
+  folderList.addEventListener('click', handleFolderListItemClick);
 }
 
 /**
@@ -140,6 +160,7 @@ function queryXpath(xpath, node = document) {
 async function main(){
   const tagNames = await extractTagNames();
   createFolderView(tagNames);
+  document.querySelector('.folder-list-item').classList.add('is-active');
 }
 
 main();

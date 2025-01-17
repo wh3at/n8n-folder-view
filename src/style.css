@@ -1,144 +1,112 @@
-/* Container for the folder view */
 #folder-view-container {
-  color: #C3C9D5; /* Text color */
-  
-  /* Layout properties*/
+  color: #C3C9D5;
   display: flex;
   flex-direction: column;
   position: relative;
-  
 }
 
-/* Divider line styling */
 .divider {
-  border-top: 1px #9398A0 solid; /* Top border */
-  margin: 12px; /* Spacing around the divider */
+  border-top: 1px #9398A0 solid;
+  margin: 12px;
 }
 
-/* Folder list container */
 #folder-list {
-  list-style-type: none; /* Remove default list styling */
-  padding: 0 12px; /* Horizontal padding */
-  
-  /* Scroll behavior*/
-  max-height: 800px; /* Maximum height before scrolling */
-  overflow-y: auto; /* Enable vertical scrolling */
-  
-  /* Layout properties */
+  padding: 0 12px;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-/* Custom scrollbar styling */
-#folder-list::-webkit-scrollbar {
-  width: 4px !important; /* Scrollbar width */
-}
-
-#folder-list::-webkit-scrollbar-track {
-  background: #414244 !important; /* Scrollbar track color */
-}
-
-#folder-list::-webkit-scrollbar-thumb {
-  background: #888 !important; /* Scrollbar thumb color */
-  border-radius: 4px !important; /* Rounded corners for thumb */
-}
-
-#folder-list::-webkit-scrollbar-thumb:hover {
-  background: #555 !important; /* Thumb color on hover */
-}
-
-/* Individual folder list item */
 .folder-list-item {
-  cursor: pointer; /* Pointer cursor on hover */
-  padding: 20px 12px; /* Padding inside the item */
-  height: 40px; /* Fixed height */
-  border-radius: 4px; /* Rounded corners */
-  display: flex; /* Flex layout for alignment */
-  align-items: center; /* Center items vertically */
-  overflow: hidden; /* Hide overflow content */
-  position: relative; /* For tooltip positioning */
-  
-  /* Additional spacing between items */
-  /* Applies margin-top to all items except the first child */
+  cursor: pointer;
+  padding: 20px 12px;
+  height: 40px;
+  border-radius: 4px;
+  align-items: center;
+  display: flex;
+  position: relative;
 }
 
 .folder-list-item:not(:first-child) {
-  margin-top: 8px; /* Space between consecutive items */
+  margin-top: 8px;
 }
 
-/* Active or hovered folder list item */
-.folder-list-item:hover,
-.folder-list-item.is-active {
-  background-color: #525456; /* Background color on hover or when active */
-}
-
-/* Icon within the folder list item */
 .folder-list-item-icon {
-  margin-right: 13px; /* Space between icon and name */
-  display: inline-block; /* Inline block for proper alignment */
+  margin-right: 13px;
+  display: inline-block;
 }
 
-/* Folder name styling */
 .folder-list-item-name {
-  font-size: 14px; /* Font size */
-  display: inline-block; /* Inline block for proper alignment */
-  height: 35px; /* Fixed height */
-  line-height: 35px; /* Vertically center text */
-  
-  /* Text overflow handling*/
-  text-overflow: ellipsis; /* Truncate overflowing text with ellipsis */
-  overflow: hidden; /* Hide overflowing text */
-  white-space: nowrap; /* Prevent text from wrapping */
-  max-width: calc(100% - 30px); /* Maximum width to accommodate icon and padding */
+  font-size: 14px;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: calc(100% - 30px);
 }
 
-/* Tooltip styling */
 .tooltip {
-  position: fixed; /* Fixed positioning relative to viewport */
-  background-color: #E7EBF3; /* Background color */
-  color: #2C2E30; /* Text color */
-  padding: 12px; /* Padding inside the tooltip */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 12px; /* Font size */
-  white-space: nowrap; /* Prevent text from wrapping */
-  z-index: 9999999; /* Ensure tooltip appears above other elements */
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-  
-  /* Hidden by default */
+  position: fixed;
+  background-color: #E7EBF3;
+  color: #2C2E30;
+  padding: 12px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 9999999;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
   opacity: 0;
   pointer-events: none;
-  visibility: hidden;
-  
-  /* Transition for smooth appearance */
   transition: opacity 0.3s ease-in-out 0.3s;
-  transform: translateY(-50%); /* Adjust position */
+  transform: translateY(-50%);
+  visibility: hidden;
 }
 
-/* Tooltip arrow before the tooltip */
 .tooltip::before {
   content: "";
-  position: absolute; /* Position relative to tooltip */
-  left: -4px; /* Position to the left of the tooltip */
-  top: 50%; /* Vertically center */
-  transform: translateY(-50%); /* Adjust for perfect centering */
-  border-width: 4px; /* Size of the arrow */
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 4px;
 }
 
-/* Tooltip arrow after the tooltip */
 .tooltip::after {
   content: "";
-  position: absolute; /* Position relative to tooltip */
-  left: 0; /* Align with the left edge */
-  top: 60%; /* Slightly below center */
-  border-style: solid; /* Solid border to create arrow */
-  border-width: 5px 5px 5px 0; /* Triangle shape */
-  border-color: transparent #E7EBF3 transparent transparent; /* Arrow color */
-  transform: translate(-100%, -50%); /* Position the arrow correctly */
+  position: absolute;
+  left: 0;
+  top: 60%;
+  border-style: solid;
+  border-width: 5px 5px 5px 0;
+  border-color: transparent #E7EBF3 transparent transparent;
+  translate: -100% -50%;
 }
 
-/* Show tooltip on hover */
 .folder-list-item:hover .tooltip {
-  opacity: 1; /* Make tooltip visible */
-  visibility: visible; /* Ensure tooltip is rendered */
+  opacity: 1;
+  visibility: visible;
+}
+
+.folder-list-item:hover,
+.folder-list-item.is-active {
+  background-color: #525456;
+}
+
+#folder-list::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+#folder-list::-webkit-scrollbar-track {
+  background: #414244 !important;
+}
+
+#folder-list::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 4px !important;
+}
+
+#folder-list::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
 }
